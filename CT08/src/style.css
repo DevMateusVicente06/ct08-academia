@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    border-bottom: 2px solid #f1c40f;
+    padding: 10px;
+    z-index: 10;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+    margin-left: 18px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #f1c40f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    position: relative;
+    height: calc(100vh - 90px);
+    background: url('./img/Focused Strength in the Gym.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    z-index: 0;
+    padding-top: 80px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #FFD700;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn-whats {
+    background-color: #e6c200;
+    color: rgb(0, 0, 0);
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-whats:hover {
+    background-color: #e6c200;
+}
+
+#servicos {
+    display: grid;
+    place-items: center;
+    margin-right: 160px;
+}
+
+.coming-soon {
+    font-family: "ChaletComprime";
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 145px;
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.destaques-titulo {
+    margin-left: 1%;
+    position: relative;
+}
+
+.destaques-container {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 170px;
+    margin-right: 85px;
+    position: relative;
+    background-color: #000;
+    padding: 3% 5% 3% 5%;
+    border-radius: 10px;
+}
+
+.destaques-image-container img {
+    width: 300px;
+    height: 350px;
+    margin: 1px 5px 1px 5px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 3px solid #e6c200;
+    cursor: pointer;
+    transition: transform 0.3s, filter 0.15s, border 0.3s, border-radius 0.3s;
+    z-index: 10;
+}
+
+.destaques-image-container:hover img {
+    transform: scale(1.6);
+    filter: brightness(45%);
+    border: none;
+    border-radius: 2px;
+    position: relative;
+}
+
+.dentro-imagem-container {
+    position: absolute;
+    opacity: 0;
+    bottom: -4%;
+    left: -25%;
+    right: -25%;
+    z-index: 100;
+    font-family: "Chalet";
+    transition: opacity 0.10s ease-in-out;
+    pointer-events: none;
+    justify-content: center;
+}
+
+.dentro-imagem-container::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    bottom: -15px;
+    left: -10px;
+    z-index: -1;
+    background-color: rgba(236, 236, 236, 0.164);
+    box-shadow: -4px 4px 6px -1px black;
+    border-radius: 10px;
+}
+
+.destaques-image-container:hover .dentro-imagem-container {
+    opacity: 1;
+    visibility: visible;
+    cursor: default;
+    z-index: 10;
+}
+
+.destaques-image-container .dentro-titulo {
+    margin-bottom: 15px;
+    font-size: 42px;
+    font-weight: 500;
+}
+
+.dentro-titulo-descricao {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    width: 450px;
+}
+
+.dentro-imagem-tags p {
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #e6c200;
+    color: black;
+    padding: 4px 10px;
+    border-radius: 15px;
+}
+
+.dentro-imagem-tags {
+    display: flex;
+}
+
+.destaques-nome-titulo {
+    width: 300px;
+    margin-top: 15px;
+    font-family: "Chalet";
+    font-size: 25px;
+    text-align: center;
+}
+
+.ebook-highlight {
+    background: url('ebook-bg.jpg') center center/cover no-repeat;
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ebook-highlight .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+}
+
+.ebook-highlight .content {
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+    max-width: 600px;
+}
+
+.ebook-highlight h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.ebook-highlight p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-ebook {
+    background-color: #e6c200;
+    color: rgb(0, 0, 0);
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-ebook:hover {
+    background-color: #e6c200;
+}
+
+.logos img {
+    width: 100px;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+
+
+
+

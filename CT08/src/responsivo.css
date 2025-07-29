@@ -1,0 +1,234 @@
+/* =================================================================== */
+/*      REGRAS RESPONSIVAS GERAIS (TABLETS E TELAS MENORES)          */
+/* =================================================================== */
+@media (max-width: 1024px) {
+    body {
+        /*
+         * CORREÇÃO DE SOBREPOSIÇÃO 1: Compensa o header fixo, que fica
+         * mais alto no mobile devido ao empilhamento do logo e da navegação.
+         * AJUSTE ESTE VALOR (ex: 160px) conforme a altura real do seu header.
+        */
+        padding-top: 160px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    header {
+        padding: 15px 0; /* Aumentado para dar mais respiro */
+        box-sizing: border-box;
+    }
+
+    .logo {
+        margin-bottom: 15px; /* Aumentado para mais espaço */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Aumentado para mais espaço */
+        width: 100%;
+        text-align: center;
+        margin-top: 0;
+        padding-left: 0;
+    }
+
+    .hero {
+        padding: 40px 20px;
+        height: auto;
+        min-height: calc(100vh - 200px); /* Ajustado para o novo padding do body */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+        margin-bottom: 25px;
+    }
+
+    .btn-whats {
+        display: inline-block;
+        margin: 0 auto;
+        padding: 12px 24px;
+    }
+
+    #servicos {
+        padding: 50px 20px 60px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden; /* CORREÇÃO: Previne vazamento horizontal nesta seção */
+    }
+
+    .coming-soon {
+        text-align: center;
+        padding: 0 20px;
+        margin: 0 auto 40px;
+        box-sizing: border-box;
+        max-width: 90%;
+    }
+
+    .destaques-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        width: 90%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .destaques-titulo {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .destaques-image-container {
+        width: 100%;
+        position: relative;
+    }
+
+    .destaques-image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border: 2px solid #e6c200;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    /* Remove efeitos hover problemáticos em touch */
+    .destaques-image-container:hover img {
+        transform: none;
+        filter: none;
+    }
+    .destaques-image-container:hover .dentro-imagem-container {
+        opacity: 0;
+        visibility: hidden;
+    }
+    .dentro-imagem-container {
+        display: none;
+    }
+
+    .destaques-nome-titulo {
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    /* --- CORREÇÃO DA SEÇÃO EBOOK --- */
+    .ebook-highlight {
+        height: auto;
+        padding: 50px 20px;
+        margin: 60px 0;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .ebook-highlight .overlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        position: static; /* Remove posicionamento que causa sobreposição */
+    }
+
+    .ebook-highlight .content {
+        max-width: 100%;
+        order: 1; /* Conteúdo de texto vem primeiro */
+    }
+
+    .ebook-highlight .logos {
+        order: 2; /* Logos vêm depois do texto */
+        position: static; /* CORREÇÃO CRÍTICA: Tira o logo do posicionamento absoluto */
+        margin-top: 30px; /* Cria espaço entre o texto e o logo */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    /* --- FIM DA CORREÇÃO --- */
+
+    .btn-ebook {
+        display: inline-block;
+        margin: 0 auto;
+        padding: 12px 24px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 25px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 0;
+    }
+}
+
+/* =================================================================== */
+/*                RESPONSIVO - MOBILE (AJUSTES FINOS)                  */
+/* =================================================================== */
+@media (max-width: 768px) {
+    .destaques-container {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    /* Mostrar infos das imagens SEM hover no mobile */
+    .dentro-imagem-container {
+        display: block;
+        opacity: 1 !important;
+        visibility: visible !important;
+        position: static !important;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .destaques-image-container:hover img,
+    .destaques-image-container img {
+        transform: none !important;
+        filter: none !important;
+        border: 3px solid #e6c200;
+    }
+
+    .dentro-titulo-descricao {
+        width: auto;
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    .dentro-imagem-tags {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .dentro-imagem-tags p {
+        margin: 5px;
+    }
+
+    /* Adiciona espaço entre o botão do ebook e o rodapé */
+    .btn-ebook {
+        margin-bottom: 50px;
+    }
+}
